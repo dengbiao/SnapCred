@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1742734733547" clover="3.2.0">
+  <project timestamp="1742734733547" name="All files">
+    <metrics statements="50" coveredstatements="50" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3" elements="53" coveredelements="53" complexity="0" loc="50" ncloc="50" packages="3" files="3" classes="3"/>
+    <package name="app">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.tsx" path="/Users/bytedance/Workspace/SnapCred/src/app/App.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.pages">
+      <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="HomePage.tsx" path="/Users/bytedance/Workspace/SnapCred/src/app/pages/HomePage.tsx">
+        <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="129" count="1" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="142" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="162" count="1" type="stmt"/>
+        <line num="193" count="1" type="stmt"/>
+        <line num="209" count="1" type="stmt"/>
+        <line num="215" count="1" type="stmt"/>
+        <line num="222" count="1" type="stmt"/>
+        <line num="231" count="1" type="stmt"/>
+        <line num="251" count="1" type="stmt"/>
+        <line num="263" count="1" type="stmt"/>
+        <line num="271" count="1" type="stmt"/>
+        <line num="275" count="1" type="stmt"/>
+        <line num="281" count="1" type="stmt"/>
+        <line num="287" count="1" type="stmt"/>
+        <line num="300" count="1" type="stmt"/>
+        <line num="311" count="1" type="stmt"/>
+        <line num="316" count="1" type="stmt"/>
+        <line num="325" count="1" type="stmt"/>
+        <line num="335" count="1" type="stmt"/>
+        <line num="353" count="1" type="stmt"/>
+        <line num="354" count="3" type="stmt"/>
+        <line num="519" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="app.routes">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Routes.tsx" path="/Users/bytedance/Workspace/SnapCred/src/app/routes/Routes.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

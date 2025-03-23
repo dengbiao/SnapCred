@@ -29,9 +29,12 @@
       "@domain/*": ["src/domain/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
       "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"]
-    }
+      "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"]
+    },
+    /* For Jest */
+    "types": ["jest", "node", "@testing-library/jest-dom"]
   },
-  "include": ["src"],
+  "include": ["src", "jest.setup.js", "src/__tests__/types/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
