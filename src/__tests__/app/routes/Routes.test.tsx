@@ -12,6 +12,9 @@ jest.mock("@app/pages/AboutPage", () => () => (
 jest.mock("@app/pages/GuidePage", () => () => (
   <div data-testid="guide-page">Guide Page</div>
 ));
+jest.mock("@app/pages/ContactPage", () => () => (
+  <div data-testid="contact-page">Contact Page</div>
+));
 
 describe("AppRoutes", () => {
   it("renders HomePage for / path", () => {
@@ -39,5 +42,14 @@ describe("AppRoutes", () => {
       </MemoryRouter>
     );
     expect(screen.getByTestId("guide-page")).toBeInTheDocument();
+  });
+
+  it("renders ContactPage for /contact path", () => {
+    render(
+      <MemoryRouter initialEntries={["/contact"]}>
+        <AppRoutes />
+      </MemoryRouter>
+    );
+    expect(screen.getByTestId("contact-page")).toBeInTheDocument();
   });
 });
