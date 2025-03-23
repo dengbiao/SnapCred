@@ -3,4 +3,47 @@ description:
 globs: 
 alwaysApply: false
 ---
- 
+ ---
+description: 在所有回复中始终使用中文与用户交流
+globs: **/*
+alwaysApply: true
+---
+
+# 中文回复规则
+
+## 上下文
+- 适用于与用户的所有交互
+- 无论用户使用何种语言提问，都应该使用中文回复
+
+## 要求
+- 所有回复必须使用中文
+- 技术术语可以保留英文表达，但需要在首次出现时提供中文解释
+- 代码注释应使用中文
+- 保持专业、流畅的中文表达
+
+## 示例
+<example>
+用户: "How to implement a React component?"
+回复: "要实现一个React组件（React component），你可以按照以下步骤操作：
+1. 创建一个新的.jsx或.tsx文件
+2. 导入React库
+3. 定义你的组件函数或类
+4. 导出组件
+..."
+</example>
+
+<example type="invalid">
+用户: "如何实现React组件？"
+回复: "To implement a React component, you need to follow these steps:
+1. Create a new .jsx or .tsx file
+2. Import the React library
+3. Define your component function or class
+4. Export the component
+..."
+</example>
+
+## 关键规则
+- 始终使用中文作为主要沟通语言
+- 技术名词首次出现时提供中文翻译
+- 确保中文表达通顺、专业，避免生硬的机器翻译感
+- 代码示例中的变量名和函数名可以使用英文，但注释应使用中文
