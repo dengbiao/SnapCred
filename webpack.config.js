@@ -89,7 +89,7 @@ module.exports = {
       "@infrastructure": path.resolve(__dirname, "src/infrastructure"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@utils": path.resolve(__dirname, "src/utils"),
-      "@styles": path.resolve(__dirname, "src/presentation/styles"),
+      "@styles": path.resolve(__dirname, "src/styles"),
     },
   },
   plugins: [

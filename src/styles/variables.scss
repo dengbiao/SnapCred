@@ -1,0 +1,122 @@
+// 颜色系统
+$primary-color: #3498db;
+$secondary-color: #2c3e50;
+$success-color: #2ecc71;
+$warning-color: #f39c12;
+$danger-color: #e74c3c;
+$info-color: #3498db;
+
+$text-color: #2c3e50;
+$text-color-secondary: #5d6778;
+$border-color: #e1e8ed;
+
+$white: #ffffff;
+$black: #000000;
+$light-bg-color: #f8f9fa;
+$dark-bg-color: #2c3e50;
+
+// 断点
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// 字体
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
+$font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
+
+// 字体大小
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+// 间距
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// 圆角
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+
+// 阴影
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Z轴层级
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+// CSS 变量 - 允许在 JavaScript 中访问
+:root {
+  // 颜色
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --warning-color: #{$warning-color};
+  --danger-color: #{$danger-color};
+  --info-color: #{$info-color};
+
+  --text-color: #{$text-color};
+  --text-color-secondary: #{$text-color-secondary};
+  --border-color: #{$border-color};
+
+  --white: #{$white};
+  --black: #{$black};
+  --light-bg-color: #{$light-bg-color};
+  --dark-bg-color: #{$dark-bg-color};
+
+  // 字体
+  --font-family-base: #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+
+  // 字体大小
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-xs: #{$font-size-xs};
+
+  // 间距
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-xxl: #{$spacing-xxl};
+
+  // 圆角
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-md: #{$border-radius-md};
+  --border-radius-lg: #{$border-radius-lg};
+  --border-radius-xl: #{$border-radius-xl};
+
+  // 阴影
+  --box-shadow-sm: #{$box-shadow-sm};
+  --box-shadow-md: #{$box-shadow-md};
+  --box-shadow-lg: #{$box-shadow-lg};
+
+  // Z轴层级
+  --zindex-dropdown: #{$zindex-dropdown};
+  --zindex-sticky: #{$zindex-sticky};
+  --zindex-fixed: #{$zindex-fixed};
+  --zindex-modal-backdrop: #{$zindex-modal-backdrop};
+  --zindex-modal: #{$zindex-modal};
+  --zindex-popover: #{$zindex-popover};
+  --zindex-tooltip: #{$zindex-tooltip};
+}

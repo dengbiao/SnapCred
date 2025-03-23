@@ -33,7 +33,8 @@ describe("HomePage", () => {
 
   it("provides navigation links to other pages", () => {
     // Check for links to guide or about pages
-    const guideLink = screen.getByText(/开始使用|立即制作|创建证件照/i);
+    const guideLink =
+      screen.getByText(/开始使用|立即制作|创建证件照|立即体验/i);
     expect(guideLink).toBeInTheDocument();
   });
 });
