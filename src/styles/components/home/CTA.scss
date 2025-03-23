@@ -1,41 +1,49 @@
-@import "../../variables.scss";
+@import "../../variables";
 
 .cta-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
-  color: $white;
+  padding: 6rem 2rem;
+  background: linear-gradient(
+    135deg,
+    $primary-color,
+    darken($primary-color, 20%)
+  );
   text-align: center;
+  color: $white;
 
   @media (max-width: $breakpoint-md) {
-    padding: 3rem 1rem;
+    padding: 4rem 1.5rem;
   }
 }
 
 .cta-container {
-  max-width: $container-max-width;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .cta-title {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   font-weight: 700;
+  margin-bottom: 1.5rem;
 
   @media (max-width: $breakpoint-md) {
     font-size: 2rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1.75rem;
   }
 }
 
 .cta-text {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.5;
 
   @media (max-width: $breakpoint-md) {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -43,27 +51,26 @@
   display: inline-block;
   background-color: $white;
   color: $primary-color;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: $border-radius-lg;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: $box-shadow-md;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    background-color: lighten($white, 5%);
+    box-shadow: $box-shadow-lg;
+    background-color: darken($white, 5%);
   }
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   }
 
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-sm) {
+    padding: 0.875rem 2rem;
     font-size: 1rem;
-    padding: 0.8rem 1.5rem;
   }
 }
