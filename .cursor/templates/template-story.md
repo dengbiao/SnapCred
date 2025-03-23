@@ -1,152 +1,152 @@
-# Story Template
+# 故事模板
 
 <version>1.0.0</version>
 
-## Requirements
+## 要求
 
-- Follow standardized story structure
-- Include all required sections - some will be empty to start with
+- 遵循标准化的故事结构
+- 包含所有必需部分 - 开始时有些部分可能为空
 
-## Story Structure
+## 故事结构
 
-### Required Sections
+### 必需部分
 
-#### 1. Header
+#### 1. 标题
 
-Epic-{N}: {Epic Title}
-Story-{M}: {Story Title}
+史诗-{N}：{史诗标题}
+故事-{M}：{故事标题}
 
-#### 2. Story Description
+#### 2. 故事描述
 
-**As a** {role}
-**I want** {action}
-**so that** {benefit}
+**作为** {角色}
+**我想要** {行动}
+**以便** {收益}
 
-#### 3. Status
+#### 3. 状态
 
-- Draft
-- In Progress
-- Complete
-- Cancelled
+- 草稿
+- 进行中
+- 完成
+- 已取消
 
-#### 4. Context
+#### 4. 上下文
 
-- Background information
-- Current state
-- Story justification
-- Technical context
-- Business drivers
-- Relevant history from previous stories
+- 背景信息
+- 当前状态
+- 故事理由
+- 技术背景
+- 业务驱动因素
+- 来自以前故事的相关历史
 
-#### 5. Estimation
+#### 5. 估算
 
-Story Points: {Story Points (1 SP = 1 day of Human Development = 10 minutes of AI development)}
+故事点数：{故事点数（1 SP = 1 天人类开发 = 10 分钟 AI 开发）}
 
-#### 6. Tasks
+#### 6. 任务
 
-##### Task Groups
+##### 任务组
 
-1. - [ ] {Major Task Group 1}
-   1. - [ ] {Test Subtasks (as needed)}
-   2. - [ ] {Subtask}
+1. - [ ] {主要任务组 1}
+   1. - [ ] {测试子任务（根据需要）}
+   2. - [ ] {子任务}
 
-Note:
+注意：
 
-- Use - [x] for completed items
-- Use ~~skipped/cancelled items~~
-- Follow TDD - Start with Writing Tests Subtask
+- 使用 - [x] 表示已完成项目
+- 使用 ~~已跳过/已取消项目~~
+- 遵循 TDD - 从编写测试子任务开始
 
-### 7. Additional Sections
+### 7. 附加部分
 
-#### Constraints
+#### 约束
 
-- List any technical or business constraints
+- 列出任何技术或业务约束
 
-#### Data Models / Schema
+#### 数据模型 / 模式
 
-- Database schemas
-- API request/response models
-- Interfaces/types
+- 数据库模式
+- API 请求/响应模型
+- 接口/类型
 
-#### Structure
+#### 结构
 
-- Module organization
-- File structure plan
+- 模块组织
+- 文件结构计划
 
-#### Diagrams
+#### 图表
 
-- Mermaid diagrams as needed
+- 根据需要使用 Mermaid 图表
 
-#### Dev Notes
+#### 开发笔记
 
-- Implementation commentary
-- Important considerations
-- Technical decisions
+- 实现评论
+- 重要考虑事项
+- 技术决策
 
-#### Chat Command Log
+#### 聊天命令日志
 
-- Commands from User
-- Agent Question and Users Response
+- 用户的命令
+- 代理问题和用户响应
 
-## Examples
+## 示例
 
 <example>
-# Epic-1: Basic Chess Game
-# Story-2: Implement Chessboard UI
+# 史诗-1：基础国际象棋游戏
+# 故事-2：实现国际象棋棋盘界面
 
-## Story
+## 故事
 
-**As a** chess player
-**I want** to see a clear and interactive chessboard
-**so that** I can play chess in the web browser
+**作为** 国际象棋玩家
+**我想要** 看到一个清晰且可交互的棋盘
+**以便** 我可以在网页浏览器中下棋
 
-## Status
+## 状态
 
-In Progress
+进行中
 
-## Context
+## 上下文
 
-Part of Epic-1 which implements the core 2-player chess game. This story focuses on the visual and interactive aspects of the chessboard. The project setup (Story-1) is complete, providing the foundation for UI implementation.
+属于实现核心双人国际象棋游戏的史诗-1。本故事专注于棋盘的视觉和交互方面。项目设置（故事-1）已完成，为界面实现提供了基础。
 
-## Estimation
+## 估算
 
-Story Points: 2
+故事点数：2
 
-## Tasks
+## 任务
 
-1. - [x] Create Chessboard Grid
-   1. - [x] Implement 8x8 board layout
-   2. - [x] Add square coloring
-   3. - [x] Write grid tests
-2. - [ ] Add Chess Pieces
-   1. - [ ] Create piece components
-   2. - [ ] Add piece images
-   3. - [ ] Write piece tests
-3. - [ ] Implement Basic Interaction
-   1. - [ ] Add click handlers
-   2. - [ ] Highlight selected square
-   3. - [ ] Write interaction tests
+1. - [x] 创建棋盘网格
+   1. - [x] 实现 8x8 棋盘布局
+   2. - [x] 添加方格着色
+   3. - [x] 编写网格测试
+2. - [ ] 添加棋子
+   1. - [ ] 创建棋子组件
+   2. - [ ] 添加棋子图片
+   3. - [ ] 编写棋子测试
+3. - [ ] 实现基本交互
+   1. - [ ] 添加点击处理程序
+   2. - [ ] 高亮显示选中的方格
+   3. - [ ] 编写交互测试
 
-## Dev Notes
+## 开发笔记
 
-- Using React for UI components
-- Chess piece SVGs from open-source library
-- Implementing responsive design for various screen sizes
+- 使用 React 作为界面组件
+- 使用开源库的国际象棋棋子 SVG
+- 实现响应式设计以适应各种屏幕尺寸
 
-## Chat Command Log
+## 聊天命令日志
 
-- BMad: Let's implement the chessboard UI
-- AiAgent: Reviewing the design requirements. Should we use SVG or PNG for pieces?
-  - BMad: Let's use SVG for better scaling
-- AiAgent: Grid implementation complete, proceeding with piece placement
+- BMad：让我们实现棋盘界面
+- AiAgent：正在审查设计需求。我们应该为棋子使用 SVG 还是 PNG？
+  - BMad：让我们使用 SVG 以便更好地缩放
+- AiAgent：网格实现完成，继续放置棋子
   </example>
 
 <example type="invalid">
-Chess UI Story
+国际象棋界面故事
 
-todo:
+待办：
 
-- make board
-- add pieces
-- make it work
+- 制作棋盘
+- 添加棋子
+- 使其工作
   </example>

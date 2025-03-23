@@ -1,85 +1,85 @@
-# Architecture Template
+# 架构模板
 
 <version>1.0.0</version>
 
-## Requirements
+## 要求
 
-- Document architectural decisions clearly
-- Maintain a Changelog
-- Judicious use of mermaid diagrams
+- 清晰记录架构决策
+- 维护变更日志
+- 明智地使用 mermaid 图表
 
-## Structure
+## 结构
 
-### Required Sections
+### 必需部分
 
-#### 1. Title {Architecture for {project}}
+#### 1. 标题 {架构用于 {项目}}
 
-#### 2. Status
+#### 2. 状态
 
-- Draft
-- Approved
+- 草稿
+- 已批准
 
-#### 3. Technical Summary
+#### 3. 技术摘要
 
-#### 4. Technology Table
+#### 4. 技术表
 
-Table listing choices for languages, libraries, infra, etc...
+列出语言、库、基础设施等选择的表格...
 
-- column for technology
-- column for descrpition
+- 技术列
+- 描述列
 
-#### 5. Arhictectural Diagrams
+#### 5. 架构图
 
-- Mermaid Diagrams as needed
+- 根据需要使用 Mermaid 图表
 
-#### 6. Data Models, API Specs, Schemas, etc...
+#### 6. 数据模型、API 规范、模式等...
 
-- not exhaustive - but key ideas that need to be retained and followed across stories
+- 不需要详尽 - 但需要保留和跨故事遵循的关键思想
 
-#### 7. Project Structure
+#### 7. 项目结构
 
-document the folder and file organization and structure along with descriptions
+记录文件夹和文件组织结构以及描述
 
-#### 8. Change Log
+#### 8. 变更日志
 
-markdown table of key changes after document is no longer in draft and is updated, table includes the change title, the story id that the change happened during, and a description if the title is not clear enough
+文档不再处于草稿状态并更新后的关键变更的 markdown 表格，表格包括变更标题、变更发生的故事 ID 以及如果标题不够清晰的描述
 
-## Examples
+## 示例
 
 <example>
-# Architecture for Sensor Data Processing Platform
+# 传感器数据处理平台架构
 
-## Status: Approved
+## 状态：已批准
 
-## Technical Summary
+## 技术摘要
 
-This architecture defines a scalable, fault-tolerant platform for processing real-time sensor data from multiple sources. The system employs a microservices architecture to ensure high availability, scalability, and maintainability while supporting real-time data processing and analysis.
+该架构定义了一个可扩展、容错的平台，用于处理来自多个来源的实时传感器数据。系统采用微服务架构，确保高可用性、可扩展性和可维护性，同时支持实时数据处理和分析。
 
-## Technology Table
+## 技术表
 
-| Technology   | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
-| Kubernetes   | Container orchestration platform for microservices deployment |
-| Apache Kafka | Event streaming platform for real-time data ingestion         |
-| TimescaleDB  | Time-series database for sensor data storage                  |
-| Go           | Primary language for data processing services                 |
-| GoRilla Mux  | REST API Framework                                            |
-| Python       | Used for data analysis and ML services                        |
-| gRPC         | Inter-service communication protocol                          |
-| Prometheus   | Metrics collection and monitoring                             |
-| Grafana      | Visualization and dashboarding                                |
+| 技术         | 描述                               |
+| ------------ | ---------------------------------- |
+| Kubernetes   | 用于微服务部署的容器编排平台       |
+| Apache Kafka | 用于实时数据摄取的事件流平台       |
+| TimescaleDB  | 用于传感器数据存储的时间序列数据库 |
+| Go           | 数据处理服务的主要语言             |
+| GoRilla Mux  | REST API 框架                      |
+| Python       | 用于数据分析和机器学习服务         |
+| gRPC         | 服务间通信协议                     |
+| Prometheus   | 指标收集和监控                     |
+| Grafana      | 可视化和仪表板                     |
 
-## Architectural Diagrams
+## 架构图
 
 ```mermaid
 graph TD
-    A[Sensor Gateway] -->|Raw Data| B[Kafka]
-    B --> C[Data Processor]
-    B --> D[Alert Service]
+    A[传感器网关] -->|原始数据| B[Kafka]
+    B --> C[数据处理器]
+    B --> D[告警服务]
     C --> E[(TimescaleDB)]
-    C --> F[Analytics Engine]
-    D --> G[Notification Service]
-    F --> H[ML Predictor]
+    C --> F[分析引擎]
+    D --> G[通知服务]
+    F --> H[机器学习预测器]
 
     style A fill:#f9f,stroke:#333
     style B fill:#bbf,stroke:#333
@@ -88,21 +88,21 @@ graph TD
 
 ```mermaid
 sequenceDiagram
-    participant S as Sensor
-    participant G as Gateway
+    participant S as 传感器
+    participant G as 网关
     participant K as Kafka
-    participant P as Processor
+    participant P as 处理器
     participant DB as TimescaleDB
 
-    S->>G: Send Data
-    G->>K: Publish Event
-    K->>P: Consume Event
-    P->>DB: Store Processed Data
+    S->>G: 发送数据
+    G->>K: 发布事件
+    K->>P: 消费事件
+    P->>DB: 存储处理后的数据
 ```
 
-## Data Models
+## 数据模型
 
-### Sensor Reading Schema
+### 传感器读数模式
 
 ```json
 {
@@ -120,43 +120,43 @@ sequenceDiagram
 }
 ```
 
-## Project Structure
+## 项目结构
 
 ```
 /
 ├── /services
-│   ├── /gateway        # Sensor data ingestion
-│   ├── /processor      # Data processing and validation
-│   ├── /analytics      # Data analysis and ML
-│   └── /notifier       # Alert and notification system
+│   ├── /gateway        # 传感器数据摄取
+│   ├── /processor      # 数据处理和验证
+│   ├── /analytics      # 数据分析和机器学习
+│   └── /notifier       # 告警和通知系统
 ├── /deploy
-│   ├── /kubernetes     # K8s manifests
-│   └── /terraform      # Infrastructure as Code
+│   ├── /kubernetes     # K8s 配置清单
+│   └── /terraform      # 基础设施即代码
 └── /docs
-    ├── /api           # API documentation
-    └── /schemas       # Data schemas
+    ├── /api           # API 文档
+    └── /schemas       # 数据模式
 ```
 
-## Change Log
+## 变更日志
 
-| Change               | Story ID | Description                                                   |
-| -------------------- | -------- | ------------------------------------------------------------- |
-| Initial Architecture | N/A      | Initial approved system design and documentation              |
-| Add ML Pipeline      | story-4  | Integration of machine learning prediction service            |
-| Kafka Upgrade        | story-6  | Upgraded from Kafka 2.0 to Kafka 3.0 for improved performance |
+| 变更             | 故事 ID | 描述                                     |
+| ---------------- | ------- | ---------------------------------------- |
+| 初始架构         | N/A     | 初始批准的系统设计和文档                 |
+| 添加机器学习管道 | story-4 | 机器学习预测服务的集成                   |
+| Kafka 升级       | story-6 | 从 Kafka 2.0 升级到 Kafka 3.0 以提高性能 |
 
 </example>
 
 <example type="invalid">
-# Simple Architecture
+# 简单架构
 
-Just use a database and some APIs. Maybe add caching later if needed.
+只使用数据库和一些 API。如果需要，可能稍后添加缓存。
 
-Tech stack:
+技术栈：
 
-- Whatever is easiest
-- Probably MongoDB
-- Some framework
+- 最简单的方式
+- 可能是 MongoDB
+- 某些框架
 
-No diagrams or proper documentation included.
+没有包含图表或适当的文档。
 </example>

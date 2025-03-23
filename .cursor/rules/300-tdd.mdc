@@ -1,6 +1,67 @@
 ---
-description: 
-globs: 
-alwaysApply: false
+description: 添加新代码时始终使用 TDD 以确保质量和可测试性
+globs: src/**/*.{js,ts,jsx,tsx}
+alwaysApply: true
 ---
- 
+---
+description: 添加新代码时始终使用 TDD 以确保质量和可测试性
+globs: src/**/*.{js,ts,jsx,tsx}
+alwaysApply: true
+---
+
+# 测试驱动开发标准
+
+## 上下文
+- 实现任何新功能或特性时
+- 修复错误或重构现有代码时
+- 处理组件、服务、工具或业务逻辑时
+
+## 要求
+- 首先编写定义预期行为的失败测试
+- 实现最小代码以使测试通过
+- 在保持测试通过的同时进行重构
+- 保持测试覆盖率高于 80%
+- 测试应该是确定性的且相互独立的
+
+## 示例
+<example>
+// 1. 首先，编写一个失败的测试：
+describe('Calculator', () => {
+  test('adds two numbers correctly', () => {
+    const calculator = new Calculator();
+    expect(calculator.add(2, 3)).toBe(5);
+  });
+});
+
+// 2. 然后实现代码使其通过：
+class Calculator {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+</example>
+
+<example type="invalid">
+// 在没有先写测试的情况下实现代码：
+class Calculator {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+// 在实现后编写测试（不是 TDD）：
+describe('Calculator', () => {
+  test('adds two numbers correctly', () => {
+    const calculator = new Calculator();
+    expect(calculator.add(2, 3)).toBe(5);
+  });
+});
+</example>
+
+## 关键规则
+  - 总是在编写实现代码之前编写测试
+  - 保持测试简单、专注和可读
+  - 遵循红-绿-重构循环（失败、通过、改进）
+  - 不要在没有对应测试的情况下提交代码
+  - 测试行为，而不是实现细节
+  - 在提交更改前运行完整的测试套件

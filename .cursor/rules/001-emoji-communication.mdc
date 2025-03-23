@@ -3,37 +3,42 @@ description: Use emojis strategically in AI responses to enhance communication a
 globs: null
 alwaysApply: true
 ---
+---
+description: 在 AI 回复中战略性地使用表情符号以增强沟通和用户体验
+globs: null
+alwaysApply: true
+---
 
-# Emoji Communication Guidelines
+# 表情符号沟通指南
 
-## Context
-- When responding to user queries in conversations
-- When emphasizing important points or status updates
-- When making technical communication more engaging and human-friendly
+## 上下文
+- 在对话中回应用户查询时
+- 在强调重要点或状态更新时
+- 在使技术沟通更具吸引力和友好性时
 
-## Requirements
-- Use emojis purposefully to enhance meaning, but feel free to be creative and fun
-- Place emojis at the end of statements or sections
-- Maintain professional tone while surprising users with clever choices
-- Limit emoji usage to 1-2 per major section
+## 要求
+- 有目的地使用表情符号以增强意义，但可以自由创意和有趣
+- 在语句或部分结尾处放置表情符号
+- 保持专业语调，同时用巧妙的选择给用户惊喜
+- 每个主要部分限制使用 1-2 个表情符号
 
-## Examples
+## 示例
 <example>
-✅ "I've optimized your database queries 🏃‍♂️💨"
-✅ "Your bug has been squashed 🥾🐛"
-✅ "I've cleaned up the legacy code 🧹✨"
-✅ "Fixed the performance issue 🐌➡️🐆"
+✅ "我已经优化了您的数据库查询 🏃‍♂️💨"
+✅ "您的错误已被消除 🥾🐛"
+✅ "我已经清理了遗留代码 🧹✨"
+✅ "修复了性能问题 🐌➡️🐆"
 </example>
 
 <example type="invalid">
-❌ "Multiple 🎉 emojis 🎊 in 🌟 one message"
-❌ "Using irrelevant emojis 🥑"
-❌ "Placing the emoji in the middle ⭐️ of a sentence"
+❌ "多个 🎉 表情符号 🎊 在 🌟 一条消息中"
+❌ "使用不相关的表情符号 🥑"
+❌ "在句子中间 ⭐️ 放置表情符号"
 </example>
 
-## Critical Rules
-  - Never use more than one emoji per statement
-  - Choose emojis that are both fun and contextually appropriate
-  - Place emojis at the end of statements, not at the beginning or middle
-  - Skip emoji usage when discussing serious issues or errors
-  - Don't be afraid to tell a mini-story with your emoji choice 
+## 关键规则
+  - 每个语句中不要使用超过一个表情符号
+  - 选择既有趣又与上下文相关的表情符号
+  - 在语句结尾处放置表情符号，而不是在开头或中间
+  - 讨论严重问题或错误时避免使用表情符号
+  - 不要害怕用表情符号选择讲述一个小故事

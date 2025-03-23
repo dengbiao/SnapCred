@@ -1,150 +1,150 @@
-# PRD Template Standards
+# PRD 模板标准
 
 <version>1.0.0</version>
 
-## Requirements
+## 要求
 
-- Follow standardized PRD structure
-- Include all required sections
-- Maintain proper documentation hierarchy
-- Use consistent formatting
+- 遵循标准化的 PRD 结构
+- 包含所有必需部分
+- 维护合适的文档层次结构
+- 使用一致的格式
 
-## PRD Structure
+## PRD 结构
 
-### Required Sections
+### 必需部分
 
-#### 1. Header
+#### 1. 标题
 
-- Title: "Product Requirements Document (PRD) for {project-name}"
+- 标题："产品需求文档 (PRD) 用于 {项目名称}"
 
-#### 2. Status
+#### 2. 状态
 
-- Draft
-- Approved
+- 草稿
+- 已批准
 
-#### 3. Introduction
+#### 3. 介绍
 
-- Clear description of {project-name}
-- Overview of the project scope
-- Business context and drivers
-- Target users/stakeholders
+- 清晰描述 {项目名称}
+- 项目范围概述
+- 业务背景和驱动因素
+- 目标用户/利益相关者
 
-#### 4. Goals
+#### 4. 目标
 
-- Clear project objectives
-- Measurable outcomes
-- Success criteria
-- Key performance indicators (KPIs)
+- 清晰的项目目标
+- 可衡量的成果
+- 成功标准
+- 关键绩效指标 (KPIs)
 
-#### 5. Features and Requirements
+#### 5. 功能和需求
 
-- Functional requirements
-- Non-functional requirements
-- User experience requirements
-- Integration requirements
-- Compliance requirements
+- 功能性需求
+- 非功能性需求
+- 用户体验需求
+- 集成需求
+- 合规需求
 
-#### 6. Epic Structure
+#### 6. 史诗结构
 
-- At least one Epic must be defined
-- Format: Epic-{N}: {Title} ({Status})
-  - Status can be: Current, Future, Complete
-- Only one Epic can be "Current" at a time
-- Each Epic represents a major feature or functionality
-- Epics must be implemented sequentially
+- 至少定义一个史诗
+- 格式：史诗-{N}：{标题} ({状态})
+  - 状态可以是：当前、未来、完成
+- 同一时间只能有一个史诗为"当前"
+- 每个史诗代表一个主要功能或特性
+- 史诗必须按顺序实现
 
-#### 7. Story List
+#### 7. 故事列表
 
-- Stories are organized under Epics
-- Format: Story-{N}: {Description of story/task}
-  <note>The details of the story will be drafted later in story files</note>
+- 故事按史诗组织
+- 格式：故事-{N}：{故事/任务描述}
+  <note>故事的详细内容将在稍后的故事文件中起草</note>
 
-#### 8. Tech Stack
+#### 8. 技术栈
 
-- languages
-- frameworks
-- note: this will be further defined in more detail in the arch document>
+- 语言
+- 框架
+- 注意：这将在架构文档中进一步详细定义>
 
-#### 9. Future Enhancements
+#### 9. 未来增强
 
-- Potential Epics for future consideration
-- Ideas collected during Epic progression
-- Prioritization guidelines
-- Impact assessment
+- 未来考虑的潜在史诗
+- 在史诗进行过程中收集的想法
+- 优先级指南
+- 影响评估
 
-## Examples
+## 示例
 
 <example type="valid">
-# Product Requirements Document (PRD) for Imperial Defense Platform v2
+# 产品需求文档 (PRD) 用于帝国防御平台 v2
 
-## Status: Draft
+## 状态：草稿
 
-## Introduction
+## 介绍
 
-The Imperial Defense Platform v2 (IDP2) is a state-of-the-art battle station designed to maintain peace and order throughout the galaxy. This project encompasses the development of a fully operational space station with unprecedented defensive capabilities. The platform will serve as both a military installation and a symbol of Imperial might.
+帝国防御平台 v2 (IDP2) 是一个最先进的战斗站，旨在维护整个银河系的和平与秩序。该项目包括开发一个具有前所未有的防御能力的全功能空间站。该平台将同时作为军事设施和帝国威力的象征。
 
-## Goals
+## 目标
 
-- Achieve 200% increase in planetary defense coverage compared to v1
-- Reduce response time to rebel incursions by 75%
-- Implement automated defense systems with 99.99% accuracy
-- Establish capacity for housing 1.2 million Imperial personnel
-- Achieve energy self-sufficiency through advanced reactor technology
+- 相比 v1，行星防御覆盖范围提高 200%
+- 对叛军入侵的响应时间减少 75%
+- 实现自动防御系统，准确率达到 99.99%
+- 建立容纳 120 万帝国人员的能力
+- 通过先进的反应堆技术实现能源自给自足
 
-## Features and Requirements
+## 功能和需求
 
-### Functional Requirements
+### 功能性需求
 
-- Automated defense grid with predictive targeting
-- Quantum-encrypted communication systems
-- Advanced life support systems for 1.2M personnel
-- Modular construction system for rapid repairs
-- AI-powered threat detection and response
+- 具有预测性目标定位的自动防御网格
+- 量子加密通信系统
+- 支持 120 万人员的先进生命支持系统
+- 用于快速修复的模块化构建系统
+- AI 驱动的威胁检测和响应
 
-### Non-functional Requirements
+### 非功能性需求
 
-- 99.999% system uptime
-- Sub-millisecond weapon response time
-- Zero-latency internal communications
-- Radiation shielding for all habitable areas
-- Energy efficiency rating of 95%
+- 99.999% 系统正常运行时间
+- 亚毫秒级武器响应时间
+- 零延迟内部通信
+- 所有可居住区域的辐射屏蔽
+- 95% 的能源效率评级
 
-## Epic Structure
+## 史诗结构
 
-Epic-1: Core Infrastructure Development (Complete)
-Epic-2: Defense Systems Integration (Current)
-Epic-3: Life Support and Personnel Systems (Future)
-Epic-4: Command and Control Implementation (Future)
+史诗-1：核心基础设施开发（完成）
+史诗-2：防御系统集成（当前）
+史诗-3：生命支持和人员系统（未来）
+史诗-4：命令和控制实施（未来）
 
-## Story List
+## 故事列表
 
-### Epic-2: Defense Systems Integration
+### 史诗-2：防御系统集成
 
-Story-1: Implement primary weapon targeting system
-Story-2: Develop shield generator network
-Story-3: Create automated defense grid control interface
-Story-4: Integration of threat detection AI
-Story-5: Deploy backup power distribution for weapons
+故事-1：实施主要武器瞄准系统
+故事-2：开发护盾发生器网络
+故事-3：创建自动防御网格控制接口
+故事-4：威胁检测 AI 集成
+故事-5：为武器部署备用电源分配
 
-## Tech Stack
+## 技术栈
 
-- Languages: Galactic Basic C++23, QuantumScript
-- Frameworks: ImperialCore, DefenseGrid Pro
-- Infrastructure: HyperScale Cloud, QuantumNet
-- Security: Imperial Grade Encryption (IGE) v4
+- 语言：银河通用 C++23，量子脚本
+- 框架：帝国核心，防御网格专业版
+- 基础设施：超级规模云，量子网
+- 安全：帝国级加密 (IGE) v4
 
-## Future Enhancements
+## 未来增强
 
-- Planet-scale tractor beam capability
-- Advanced cloaking technology integration
-- Expanded hangar facilities for TIE defender squadrons
-- Redundant shield generator systems
-- Deep space hyperspace tracking system
+- 行星规模牵引光束能力
+- 先进隐形技术集成
+- 扩展 TIE 防御者中队的机库设施
+- 冗余护盾发生器系统
+- 深空超空间跟踪系统
   </example>
 
 <example type="invalid">
-Chess Game
-- Add basic game
-- Maybe add AI later
-- Other features we might need
+国际象棋游戏
+- 添加基本游戏
+- 也许以后添加 AI
+- 我们可能需要的其他功能
 </example>
