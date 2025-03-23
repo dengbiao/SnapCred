@@ -1,5 +1,5 @@
 @import "../../variables";
-@import "../../mixins";
+@import "../../_mixins";
 
 .photo-editor {
   width: 100%;
@@ -7,30 +7,56 @@
   margin: 0 auto;
   padding: 2rem;
 
+  @include mobile {
+    padding: 1.5rem 1rem;
+  }
+
   &__title {
     font-size: 2rem;
     color: $primary-color;
     text-align: center;
     margin-bottom: 2rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
 
-    @include mobile {
+    @media (max-width: 992px) {
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
       flex-direction: column;
+      gap: 2rem;
     }
   }
 
-  &__preview {
-    flex: 1;
-    min-width: 300px;
+  &__preview-container {
+    flex: 0 0 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 1200px) {
+      flex: 0 0 350px;
+    }
+
+    @media (max-width: 992px) {
+      flex: 0 0 300px;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 1rem;
+    }
   }
 
   &__canvas {
@@ -39,51 +65,137 @@
     border-radius: 4px;
     max-width: 100%;
     height: auto;
+
+    @include mobile {
+      margin-bottom: 1rem;
+    }
   }
 
   &__info {
-    background-color: $background-light;
     padding: 1rem;
     border-radius: 4px;
     border-left: 4px solid $primary-color;
     width: 100%;
     max-width: 400px;
+    background-color: $light-bg-color;
+
+    @media (max-width: 992px) {
+      padding: 0.8rem;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
 
     h3 {
       font-size: 1.2rem;
       color: $primary-color;
       margin-bottom: 0.5rem;
+
+      @include mobile {
+        font-size: 1.1rem;
+      }
     }
 
     p {
       color: $text-color;
       font-size: 0.9rem;
-      margin: 0;
+      margin: 0 0 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include mobile {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  &__tools-container {
+    flex: 1;
+    min-width: 300px;
+
+    @media (max-width: 768px) {
+      min-width: 100%;
+    }
+  }
+
+  &__tools-title {
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    @include mobile {
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: $primary-color;
+
+      @include mobile {
+        bottom: -8px;
+        width: 30px;
+        height: 2px;
+      }
     }
   }
 
   &__tools {
-    flex: 1;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.2rem;
+
+    @include mobile {
+      gap: 1rem;
+    }
   }
 
   &__tool {
-    background-color: $background-light;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    background-color: $light-bg-color;
+
+    @media (max-width: 992px) {
+      padding: 1.2rem;
+    }
+
+    @include mobile {
+      padding: 1rem;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
     h4 {
       font-size: 1.2rem;
       color: $primary-color;
       margin-bottom: 1rem;
+
+      @include mobile {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
     }
 
     button {
       margin-right: 1rem;
+
+      @include mobile {
+        margin-right: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
     }
   }
 
@@ -92,6 +204,10 @@
     color: $text-color;
     font-weight: 500;
     vertical-align: middle;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
   }
 
   &__slider {
@@ -110,6 +226,11 @@
       border-radius: 50%;
       background: $primary-color;
       cursor: pointer;
+
+      @include mobile {
+        width: 16px;
+        height: 16px;
+      }
     }
 
     &::-moz-range-thumb {
@@ -119,6 +240,11 @@
       background: $primary-color;
       cursor: pointer;
       border: none;
+
+      @include mobile {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 
@@ -126,13 +252,31 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    @include mobile {
+      margin-top: 1.5rem;
+    }
 
     button {
       width: auto;
       min-width: 120px;
 
       @include mobile {
+        min-width: 100px;
         flex: 1;
+        margin: 0 0.5rem;
+        padding: 0.8rem 0;
+        font-size: 0.95rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }

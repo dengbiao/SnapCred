@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from "@presentation/components/ui/Button";
 import { CredentialType } from "@domain/models/CredentialType";
+import "@styles/components/upload/PhotoEditor.scss";
 
 interface PhotoEditorProps {
   photoUrl: string;
@@ -132,7 +133,7 @@ const PhotoEditor: React.FC<PhotoEditorProps> = ({
       <h2 className="photo-editor__title">编辑您的照片</h2>
 
       <div className="photo-editor__content">
-        <div className="photo-editor__preview">
+        <div className="photo-editor__preview-container">
           <canvas ref={canvasRef} className="photo-editor__canvas" />
           <div className="photo-editor__info">
             <h3>{credentialType.name.zh}</h3>
@@ -144,42 +145,46 @@ const PhotoEditor: React.FC<PhotoEditorProps> = ({
           </div>
         </div>
 
-        <div className="photo-editor__tools">
-          <div className="photo-editor__tool">
-            <h4>调整背景</h4>
-            <Button onClick={handleBackgroundToggle}>
-              {backgroundRemoved ? "恢复原始背景" : "设置白色背景"}
+        <div className="photo-editor__tools-container">
+          <h3 className="photo-editor__tools-title">照片调整</h3>
+
+          <div className="photo-editor__tools">
+            <div className="photo-editor__tool">
+              <h4>调整背景</h4>
+              <Button onClick={handleBackgroundToggle}>
+                {backgroundRemoved ? "恢复原始背景" : "设置白色背景"}
+              </Button>
+            </div>
+
+            <div className="photo-editor__tool">
+              <h4>旋转照片</h4>
+              <Button onClick={handleRotate}>旋转90°</Button>
+              <span className="photo-editor__tool-value">{rotation}°</span>
+            </div>
+
+            <div className="photo-editor__tool">
+              <h4>亮度调整</h4>
+              <input
+                type="range"
+                min="50"
+                max="150"
+                value={brightness}
+                onChange={handleBrightnessChange}
+                className="photo-editor__slider"
+              />
+              <span className="photo-editor__tool-value">{brightness}%</span>
+            </div>
+          </div>
+
+          <div className="photo-editor__actions">
+            <Button onClick={onBack} variant="secondary">
+              返回
+            </Button>
+            <Button onClick={handleComplete} variant="primary">
+              完成
             </Button>
           </div>
-
-          <div className="photo-editor__tool">
-            <h4>旋转照片</h4>
-            <Button onClick={handleRotate}>旋转90°</Button>
-            <span className="photo-editor__tool-value">{rotation}°</span>
-          </div>
-
-          <div className="photo-editor__tool">
-            <h4>亮度调整</h4>
-            <input
-              type="range"
-              min="50"
-              max="150"
-              value={brightness}
-              onChange={handleBrightnessChange}
-              className="photo-editor__slider"
-            />
-            <span className="photo-editor__tool-value">{brightness}%</span>
-          </div>
         </div>
-      </div>
-
-      <div className="photo-editor__actions">
-        <Button onClick={onBack} variant="secondary">
-          返回
-        </Button>
-        <Button onClick={handleComplete} variant="primary">
-          完成
-        </Button>
       </div>
 
       {/* 隐藏的图片预览，用于测试 */}
