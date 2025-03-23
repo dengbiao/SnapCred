@@ -1,0 +1,139 @@
+@import "../../variables";
+@import "../../mixins";
+
+.photo-editor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  &__title {
+    font-size: 2rem;
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__preview {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__canvas {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__info {
+    background-color: $background-light;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid $primary-color;
+    width: 100%;
+    max-width: 400px;
+
+    h3 {
+      font-size: 1.2rem;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  &__tools {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__tool {
+    background-color: $background-light;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    h4 {
+      font-size: 1.2rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-right: 1rem;
+    }
+  }
+
+  &__tool-value {
+    font-size: 1rem;
+    color: $text-color;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  &__slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d7dcdf;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $primary-color;
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $primary-color;
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    button {
+      width: auto;
+      min-width: 120px;
+
+      @include mobile {
+        flex: 1;
+      }
+    }
+  }
+}
