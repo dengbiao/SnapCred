@@ -1,0 +1,112 @@
+@import "../../variables";
+
+.process-section {
+  padding: $spacing-xxl $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-bg-color;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-xl $spacing-md;
+  }
+}
+
+.process-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.process-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  color: $text-color;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 2rem;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step {
+  background-color: $white;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: $box-shadow-sm;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-md;
+  }
+
+  .step-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: lighten($primary-color, 35%);
+    border-radius: 50%;
+    margin-bottom: $spacing-md;
+
+    svg {
+      width: 35px;
+      height: 35px;
+      color: $primary-color;
+    }
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: $spacing-sm;
+    text-align: center;
+  }
+
+  .step-description {
+    color: $text-color-secondary;
+    text-align: center;
+    font-size: $font-size-base;
+  }
+}
+
+.process-cta {
+  margin-top: $spacing-xl;
+  text-align: center;
+
+  .cta-button {
+    display: inline-block;
+    background-color: $primary-color;
+    color: $white;
+    font-weight: 600;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius-md;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

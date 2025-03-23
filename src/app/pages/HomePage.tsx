@@ -5,6 +5,8 @@ import "../styles/pages/HomePage.scss";
 import Hero from "@presentation/components/home/Hero";
 import Features from "@presentation/components/home/Features";
 import { CredentialTypes } from "@presentation/components/home/CredentialTypes";
+import ProcessFlow from "@presentation/components/home/ProcessFlow";
+import FAQ from "@presentation/components/home/FAQ";
 
 const HomePage: React.FC = () => {
   return (
@@ -30,43 +32,7 @@ const HomePage: React.FC = () => {
       <CredentialTypes />
 
       {/* Process Section */}
-      <section className="process-section">
-        <h2 className="section-title">使用流程</h2>
-        <div className="process-steps">
-          <div className="process-step">
-            <div className="step-number">1</div>
-            <h3 className="step-title">上传照片</h3>
-            <p className="step-description">
-              从您的设备中选择一张照片上传，或直接拖拽到上传区域
-            </p>
-          </div>
-
-          <div className="process-step">
-            <div className="step-number">2</div>
-            <h3 className="step-title">选择规格</h3>
-            <p className="step-description">
-              从多种证件照规格中选择您需要的尺寸和要求
-            </p>
-          </div>
-
-          <div className="process-step">
-            <div className="step-number">3</div>
-            <h3 className="step-title">智能处理</h3>
-            <p className="step-description">
-              系统自动处理照片，调整大小，更换背景，优化图像
-            </p>
-          </div>
-
-          <div className="process-step">
-            <div className="step-number">4</div>
-            <h3 className="step-title">下载成品</h3>
-            <p className="step-description">
-              预览并下载处理后的证件照，即可用于打印或在线提交
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <ProcessFlow />
 
       {/* Testimonials */}
       <section className="testimonials-section">
@@ -128,6 +94,8 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
+      <FAQ />
+
       <section className="cta-section">
         <div className="cta-container">
           <h2 className="cta-title">立即开始制作您的证件照</h2>
