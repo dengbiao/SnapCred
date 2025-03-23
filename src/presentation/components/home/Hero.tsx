@@ -19,13 +19,6 @@ const Hero: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className="hero-image-container">
-        <img
-          src="/images/hero-image.jpg"
-          alt="证件照示例"
-          className="hero-image"
-        />
-      </div>
     </section>
   );
 };

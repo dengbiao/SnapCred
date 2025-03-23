@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "../styles/pages/HomePage.scss";
 import Hero from "@presentation/components/home/Hero";
 import Features from "@presentation/components/home/Features";
-import { CredentialTypes } from "@presentation/components/home/CredentialTypes";
 
 const HomePage: React.FC = () => {
   return (
@@ -14,9 +13,6 @@ const HomePage: React.FC = () => {
 
       {/* Features Section */}
       <Features />
-
-      {/* Credential Types Section */}
-      <CredentialTypes />
 
       {/* Process Section */}
       <section className="process-section">
