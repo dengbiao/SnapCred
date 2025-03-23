@@ -11,27 +11,34 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({ onPhotoSelect }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files && files.length > 0) {
-      onPhotoSelect(files[0]);
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      onPhotoSelect(file);
+
+      event.target.value = "";
     }
   };
 
   const handleDragEnter = (event: React.DragEvent) => {
     event.preventDefault();
+    event.stopPropagation();
     setIsDragActive(true);
   };
 
-  const handleDragLeave = () => {
+  const handleDragLeave = (event: React.DragEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
     setIsDragActive(false);
   };
 
   const handleDragOver = (event: React.DragEvent) => {
     event.preventDefault();
+    event.stopPropagation();
   };
 
   const handleDrop = (event: React.DragEvent) => {
     event.preventDefault();
+    event.stopPropagation();
     setIsDragActive(false);
 
     const files = event.dataTransfer.files;
@@ -40,8 +47,10 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({ onPhotoSelect }) => {
     }
   };
 
-  const handleAreaClick = () => {
-    if (fileInputRef.current) {
+  const handleAreaClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+
+    if (event.target !== fileInputRef.current && fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
@@ -67,6 +76,7 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({ onPhotoSelect }) => {
           accept="image/*"
           className="file-input"
           data-testid="file-input"
+          onClick={(e) => e.stopPropagation()}
         />
       </div>
 
