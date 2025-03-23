@@ -1,0 +1,50 @@
+{
+  "name": "snapcred",
+  "version": "0.1.0",
+  "description": "快证先生 - 免费在线制作专业证件照",
+  "main": "src/index.tsx",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "test": "jest",
+    "type-check": "tsc --noEmit",
+    "generate-favicon": "node scripts/generate-favicon.js"
+  },
+  "keywords": [
+    "证件照",
+    "照片制作",
+    "在线证件照",
+    "免费证件照",
+    "身份证照片",
+    "护照照片"
+  ],
+  "author": "SnapCred Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.2",
+    "styled-components": "^6.1.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "svg2img": "^1.0.0-beta.2",
+    "sharp": "^0.33.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

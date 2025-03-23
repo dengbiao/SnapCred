@@ -2,3 +2,4 @@
 .cursor/rules/_*.mdc
 .lh
 .history
+node_modules
