@@ -4,6 +4,7 @@ import HomePage from "@app/pages/HomePage";
 import AboutPage from "@app/pages/AboutPage";
 import GuidePage from "@app/pages/GuidePage";
 import ContactPage from "@app/pages/ContactPage";
+import UploadPage from "@app/pages/UploadPage";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/guide" element={<GuidePage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/upload" element={<UploadPage />} />
     </Routes>
   );
 };
