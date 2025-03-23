@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Layout from "../../presentation/components/layout/Layout";
+import Layout from "@presentation/components/layout/Layout";
 
 // 样式组件
 const AboutContainer = styled.div`

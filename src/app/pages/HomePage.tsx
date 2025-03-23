@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Layout from "../../presentation/components/layout/Layout";
+import Layout from "@presentation/components/layout/Layout";
 import { Link } from "react-router-dom";
 
 // Hero 区域样式

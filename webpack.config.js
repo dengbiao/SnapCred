@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { DefinePlugin } = require("webpack");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
@@ -88,9 +89,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify('')
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      favicon: "./public/images/favicon.svg",
       inject: true,
       minify: !isDevelopment,
     }),
