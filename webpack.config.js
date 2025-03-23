@@ -46,6 +46,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        use: [
+          isDevelopment ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
+      {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: "asset",
         parser: {
@@ -67,7 +75,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".js", ".jsx", ".scss", ".css"],
     alias: {
       "@app": path.resolve(__dirname, "src/app"),
       "@presentation": path.resolve(__dirname, "src/presentation"),
@@ -75,6 +83,7 @@ module.exports = {
       "@infrastructure": path.resolve(__dirname, "src/infrastructure"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@utils": path.resolve(__dirname, "src/utils"),
+      "@styles": path.resolve(__dirname, "src/presentation/styles"),
     },
   },
   plugins: [

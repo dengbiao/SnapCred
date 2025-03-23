@@ -1,77 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-
-const FooterContainer = styled.footer`
-  background-color: #f8f9fa;
-  padding: 3rem 2rem 2rem;
-  color: #555;
-  border-top: 1px solid #eaeaea;
-`;
-
-const FooterContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 576px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const FooterSection = styled.div`
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: #4285f4;
-    }
-  }
-`;
-
-const FooterBottom = styled.div`
-  margin-top: 2rem;
-  text-align: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eaeaea;
-
-  p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-`;
+import "@styles/components/layout/Footer.scss";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <FooterContainer>
-      <FooterContent>
-        <FooterSection>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <div className="footer-section">
           <h3>关于快证先生</h3>
           <ul>
             <li>
@@ -84,9 +21,9 @@ const Footer: React.FC = () => {
               <Link to="/about/technology">技术优势</Link>
             </li>
           </ul>
-        </FooterSection>
+        </div>
 
-        <FooterSection>
+        <div className="footer-section">
           <h3>帮助中心</h3>
           <ul>
             <li>
@@ -99,9 +36,9 @@ const Footer: React.FC = () => {
               <Link to="/support">联系客服</Link>
             </li>
           </ul>
-        </FooterSection>
+        </div>
 
-        <FooterSection>
+        <div className="footer-section">
           <h3>法律信息</h3>
           <ul>
             <li>
@@ -114,15 +51,15 @@ const Footer: React.FC = () => {
               <Link to="/copyright">版权信息</Link>
             </li>
           </ul>
-        </FooterSection>
+        </div>
 
-        <FooterSection>
+        <div className="footer-section">
           <h3>联系我们</h3>
           <ul>
             <li>电子邮件: contact@snapcred.com</li>
             <li>微信公众号: SnapCred快证先生</li>
             <li>
-              <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
+              <div className="social-links">
                 <a
                   href="https://weibo.com"
                   target="_blank"
@@ -145,13 +82,13 @@ const Footer: React.FC = () => {
               </div>
             </li>
           </ul>
-        </FooterSection>
-      </FooterContent>
+        </div>
+      </div>
 
-      <FooterBottom>
+      <div className="footer-bottom">
         <p>&copy; {currentYear} 快证先生 (SnapCred). 保留所有权利。</p>
-      </FooterBottom>
-    </FooterContainer>
+      </div>
+    </footer>
   );
 };
 
