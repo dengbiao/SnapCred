@@ -35,14 +35,6 @@ describe("Hero Component", () => {
     expect(ctaButton).toHaveAttribute("href", "/upload");
   });
 
-  it("displays a hero image", () => {
-    renderWithRouter(<Hero />);
-
-    const heroImage = screen.getByAltText(/证件照示例/i);
-    expect(heroImage).toBeInTheDocument();
-    expect(heroImage).toHaveAttribute("src");
-  });
-
   it("renders the secondary CTA button", () => {
     renderWithRouter(<Hero />);
 

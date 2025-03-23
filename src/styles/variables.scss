@@ -7,13 +7,18 @@ $danger-color: #e74c3c;
 $info-color: #3498db;
 
 $text-color: #2c3e50;
+$text-color-light: #6c757d;
 $text-color-secondary: #5d6778;
+$heading-color: #1a2a3a;
 $border-color: #e1e8ed;
 
 $white: #ffffff;
 $black: #000000;
 $light-bg-color: #f8f9fa;
 $dark-bg-color: #2c3e50;
+
+// 布局
+$container-max-width: 1200px;
 
 // 断点
 $breakpoint-xs: 320px;
@@ -74,7 +79,9 @@ $zindex-tooltip: 1070;
   --info-color: #{$info-color};
 
   --text-color: #{$text-color};
+  --text-color-light: #{$text-color-light};
   --text-color-secondary: #{$text-color-secondary};
+  --heading-color: #{$heading-color};
   --border-color: #{$border-color};
 
   --white: #{$white};

@@ -33,8 +33,16 @@ describe("HomePage", () => {
 
   it("provides navigation links to other pages", () => {
     // Check for links to guide or about pages
-    const guideLink =
-      screen.getByText(/开始使用|立即制作|创建证件照|立即体验/i);
-    expect(guideLink).toBeInTheDocument();
+    const guideLinks =
+      screen.getAllByText(/开始使用|立即制作|创建证件照|立即体验/i);
+    expect(guideLinks.length).toBeGreaterThan(0);
+
+    // Verify at least one link points to the upload page
+    const uploadLinks = screen.getAllByRole("link", {
+      name: /立即体验|开始制作/i,
+    });
+    expect(
+      uploadLinks.some((link) => link.getAttribute("href") === "/upload")
+    ).toBe(true);
   });
 });
