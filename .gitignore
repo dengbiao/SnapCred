@@ -2,4 +2,5 @@
 .cursor/rules/_*.mdc
 .lh
 .history
+.DS_Store
 node_modules
