@@ -19,7 +19,7 @@ export const credentialTypes: CredentialType[] = [
       width: 33,
       height: 48
     },
-    previewImage: "/images/credentials/preview/passport.jpg"
+    previewImage: "/images/credentials/preview/passport.svg"
   }),
   new CredentialType({
     id: "id_card",
@@ -36,7 +36,7 @@ export const credentialTypes: CredentialType[] = [
       width: 26,
       height: 32
     },
-    previewImage: "/images/credentials/preview/id_card.jpg"
+    previewImage: "/images/credentials/preview/id_card.svg"
   }),
   new CredentialType({
     id: "driver_license",
@@ -53,7 +53,7 @@ export const credentialTypes: CredentialType[] = [
       width: 22,
       height: 32
     },
-    previewImage: "/images/credentials/preview/driver.jpg"
+    previewImage: "/images/credentials/preview/driver.svg"
   }),
   new CredentialType({
     id: "work_permit",
@@ -70,7 +70,7 @@ export const credentialTypes: CredentialType[] = [
       width: 25,
       height: 35
     },
-    previewImage: "/images/credentials/preview/work.jpg"
+    previewImage: "/images/credentials/preview/work.svg"
   }),
   new CredentialType({
     id: "visa",
@@ -87,7 +87,7 @@ export const credentialTypes: CredentialType[] = [
       width: 35,
       height: 45
     },
-    previewImage: "/images/credentials/preview/visa.jpg"
+    previewImage: "/images/credentials/preview/visa.svg"
   }),
   new CredentialType({
     id: "graduation",
@@ -104,6 +104,6 @@ export const credentialTypes: CredentialType[] = [
       width: 35,
       height: 45
     },
-    previewImage: "/images/credentials/preview/graduation.jpg"
+    previewImage: "/images/credentials/preview/graduation.svg"
   })
 ]; 
