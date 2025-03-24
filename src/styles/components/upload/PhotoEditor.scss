@@ -27,11 +27,11 @@
     display: flex;
     gap: 2rem;
 
-    @media (max-width: 992px) {
+    @include laptop {
       gap: 1.5rem;
     }
 
-    @media (max-width: 768px) {
+    @include tablet {
       flex-direction: column;
       gap: 2rem;
     }
@@ -43,15 +43,15 @@
     flex-direction: column;
     align-items: center;
 
-    @media (max-width: 1200px) {
+    @include desktop {
       flex: 0 0 350px;
     }
 
-    @media (max-width: 992px) {
+    @include laptop {
       flex: 0 0 300px;
     }
 
-    @media (max-width: 768px) {
+    @include tablet {
       flex: 0 0 auto;
       width: 100%;
       max-width: 500px;
@@ -79,7 +79,7 @@
     max-width: 400px;
     background-color: $light-bg-color;
 
-    @media (max-width: 992px) {
+    @include laptop {
       padding: 0.8rem;
     }
 
@@ -115,7 +115,7 @@
     flex: 1;
     min-width: 300px;
 
-    @media (max-width: 768px) {
+    @include tablet {
       min-width: 100%;
     }
   }
@@ -165,7 +165,7 @@
     transition: all 0.2s ease;
     background-color: $light-bg-color;
 
-    @media (max-width: 992px) {
+    @include laptop {
       padding: 1.2rem;
     }
 

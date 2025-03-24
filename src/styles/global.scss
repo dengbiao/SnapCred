@@ -1,4 +1,5 @@
 // 全局样式
+@import "./_mixins";
 
 html,
 body {
@@ -44,7 +45,7 @@ a {
 }
 
 // 响应式断点
-@media (max-width: 768px) {
+@include tablet {
   .section {
     padding: 3rem 0;
 
@@ -55,7 +56,7 @@ a {
   }
 }
 
-@media (max-width: 576px) {
+@include mobile {
   .section {
     padding: 2rem 0;
 

@@ -1,3 +1,24 @@
+@import "../../_mixins";
+
+// 为 min-width 创建新的混合器
+@mixin min-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin min-mobile {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -9,12 +30,12 @@
   position: relative;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @include min-tablet {
     padding: 5rem 2rem;
     min-height: 400px;
   }
 
-  @media (min-width: 1200px) {
+  @include min-desktop {
     padding: 6rem 4rem;
     min-height: 450px;
   }
@@ -34,11 +55,11 @@
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
-  @media (min-width: 768px) {
+  @include min-tablet {
     font-size: 3.5rem;
   }
 
-  @media (min-width: 1200px) {
+  @include min-desktop {
     font-size: 4rem;
   }
 }
@@ -49,7 +70,7 @@
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
 
-  @media (min-width: 768px) {
+  @include min-tablet {
     font-size: 1.35rem;
   }
 }
@@ -61,7 +82,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 576px) {
+  @include min-mobile {
     flex-direction: row;
   }
 }
