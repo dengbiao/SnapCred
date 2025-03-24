@@ -1,79 +1,150 @@
-# SnapCred Testing Documentation
+# SnapCred 测试文档 🧪
 
-This directory contains all the tests for the SnapCred application. We use Jest and React Testing Library for unit and integration testing.
+本目录包含 SnapCred 应用的所有测试。我们使用 Jest 和 React Testing Library 进行单元和集成测试，遵循 TDD（测试驱动开发）方法论。
 
-## Test Structure
+## 📂 测试结构
 
-The test directory structure mirrors the application structure:
+测试目录结构与应用结构保持一致：
 
 ```
 __tests__/
-├── app/              # Tests for app components
-│   ├── components/   # Tests for components
-│   ├── pages/        # Tests for pages
-│   └── routes/       # Tests for routing
-├── domain/           # Tests for domain logic
-├── infrastructure/   # Tests for infrastructure
-├── utils/            # Tests for utility functions
-├── types/            # TypeScript type definitions
-├── test-utils.tsx    # Testing utilities
-└── README.md         # This file
+├── app/              # 应用组件测试
+│   ├── components/   # 组件测试
+│   ├── pages/        # 页面测试
+│   └── routes/       # 路由测试
+├── domain/           # 领域逻辑测试
+│   └── models/       # 数据模型测试
+├── presentation/     # 表现层测试
+│   └── components/   # UI组件测试
+├── utils/            # 工具函数测试
+├── __mocks__/        # 模拟数据和函数
+├── test-utils.tsx    # 测试工具函数
+└── README.md         # 本文件
 ```
 
-## Running Tests
+## ▶️ 运行测试
 
 ```bash
-# Run all tests
+# 运行所有测试
 npm test
 
-# Run tests in watch mode (during development)
+# 开发模式下运行测试（监视文件变化）
 npm run test:watch
 
-# Run tests with coverage report
+# 生成测试覆盖率报告
 npm run test:coverage
 ```
 
-## Testing Guidelines
+## 📝 测试指南
 
-1. **Component Tests**:
+### 1. 组件测试
 
-   - Test the component renders correctly
-   - Test user interactions (clicks, form inputs, etc.)
-   - Mock external dependencies and services
+- 测试组件是否正确渲染
+- 测试用户交互（点击、表单输入等）
+- 测试组件响应式行为
+- 模拟外部依赖和服务
 
-2. **Utility Function Tests**:
+```typescript
+describe("PhotoEditor", () => {
+  it("应该正确渲染照片编辑界面", () => {
+    render(<PhotoEditor />);
+    expect(screen.getByText("编辑照片")).toBeInTheDocument();
+  });
 
-   - Test all edge cases
-   - Test both valid and invalid inputs
-   - Aim for high coverage
+  it("应该响应亮度调整", async () => {
+    render(<PhotoEditor />);
+    const slider = screen.getByLabelText("亮度");
+    await userEvent.change(slider, { target: { value: "50" } });
+    expect(mockUpdateImage).toHaveBeenCalledWith(
+      expect.objectContaining({ brightness: 50 })
+    );
+  });
+});
+```
 
-3. **Test Naming Conventions**:
+### 2. 数据模型测试
 
-   - Use descriptive test names with the format `[component/function].[test|spec].tsx`
-   - Inside test files, use descriptive `describe` and `it` blocks
+- 测试模型创建和验证
+- 测试边界情况和异常处理
+- 确保 100%覆盖率
 
-4. **Mocking**:
-   - Use `jest.mock()` for external dependencies
-   - Use `jest.fn()` for function mocks
-   - Keep mocks as simple as possible
+```typescript
+describe("CredentialType", () => {
+  it("应该创建有效的证件类型", () => {
+    const credential = new CredentialType({
+      id: "passport",
+      name: { zh: "护照", en: "Passport" },
+      dimensions: { width: 35, height: 45 },
+    });
+    expect(credential.isValid()).toBe(true);
+  });
+});
+```
 
-## Best Practices
+### 3. 工具函数测试
 
-- Keep tests focused and isolated
-- Clean up after tests using `afterEach()` or `afterAll()`
-- Use `data-testid` attributes sparingly; prefer using accessible roles
-- Use the `test-utils.tsx` utilities to simplify test setup
+- 测试所有边缘情况
+- 测试有效和无效输入
+- 确保高覆盖率
 
-## Coverage Goals
+```typescript
+describe("formatDimensions", () => {
+  it("应该正确格式化尺寸", () => {
+    expect(formatDimensions({ width: 35, height: 45 })).toBe("35mm × 45mm");
+  });
+});
+```
 
-We aim for:
+## 🎯 命名约定
 
-- 80% coverage overall
-- 90% coverage for critical business logic
-- 70% coverage for UI components
+- 测试文件命名：`[组件/函数名].[test|spec].tsx`
+- 使用描述性的 `describe` 和 `it` 块
+- 测试用例应清晰表达预期行为
 
-## Resources
+## 🛠️ 模拟数据
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
+- 使用 `jest.mock()` 模拟外部依赖
+- 使用 `jest.fn()` 创建函数模拟
+- 在 `__mocks__` 目录中存放复杂模拟
+- 保持模拟尽可能简单
+
+```typescript
+jest.mock("../../services/imageService", () => ({
+  processImage: jest.fn(() => Promise.resolve("processed-image-data")),
+  convertToJpeg: jest.fn((data) => `${data}-as-jpeg`),
+}));
+```
+
+## ✅ 最佳实践
+
+- 保持测试专注和隔离
+- 使用 `afterEach()` 或 `afterAll()` 清理测试
+- 优先使用语义化的选择器（如 `getByRole`, `getByLabelText`），尽量减少 `data-testid` 的使用
+- 使用 `test-utils.tsx` 中的工具简化测试设置
+- 针对复杂组件，优先测试用户行为而非实现细节
+
+## �� 覆盖率目标
+
+我们的目标是：
+
+- 整体覆盖率 80% 以上
+- 业务逻辑覆盖率 90% 以上
+- UI 组件覆盖率 70% 以上
+- 数据模型覆盖率 100%
+
+当前覆盖率状态可通过 `npm run test:coverage` 查看。
+
+## 📚 资源
+
+- [Jest 文档](https://jestjs.io/docs/getting-started)
+- [React Testing Library 文档](https://testing-library.com/docs/react-testing-library/intro/)
 - [Testing Library Cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet)
+
+## 🔄 TDD 工作流程
+
+1. **编写失败测试**：先编写一个测试，定义预期功能
+2. **实现功能代码**：编写最少量代码使测试通过
+3. **重构**：优化代码，保持测试通过
+4. **重复**：继续下一个功能点
+
+遵循此流程可确保代码质量和可测试性。
